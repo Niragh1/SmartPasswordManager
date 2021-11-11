@@ -8,17 +8,22 @@ public class TextWriter {
     public static void main( String[] args ) {
         String dataUser="";
         String dataPass="";
+        String dataAcc="";
+        String split=" ";
+        String nl="\n";
         int i=1;
 
         try {
             Scanner userScn = new Scanner(System.in);
             Scanner passwordScn = new Scanner(System.in);
             while(i==1){
-
+                System.out.println("Account name");
+                dataAcc = passwordScn.next();
                 System.out.println("Enter the username");
                 dataUser = userScn.next();
                 System.out.println("Enter the password");
                 dataPass = passwordScn.next();
+
                 i++;
             }
             /*Scanner userScn = new Scanner(System.in);
@@ -32,8 +37,14 @@ public class TextWriter {
 
             FileWriter fileWritter = new FileWriter(f1.getName(),true);
             BufferedWriter bw = new BufferedWriter(fileWritter);
+
+            bw.write(dataAcc);
+            bw.write(split);
             bw.write(dataUser);
+            bw.write(split);
             bw.write(dataPass);
+            bw.write(nl);
+
             bw.close();
             System.out.println("Done");
         } catch(IOException e){
