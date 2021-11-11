@@ -1,6 +1,6 @@
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -17,17 +17,13 @@ public class TextWriter {
             Scanner userScn = new Scanner(System.in);
             Scanner passwordScn = new Scanner(System.in);
             while(i==1){
-           //     System.out.println("Account name");
-           //     dataAcc = passwordScn.next();
+                System.out.println("Account name");
+                dataAcc = passwordScn.next();
                 System.out.println("Enter the username");
                 dataUser = userScn.next();
                 System.out.println("Enter the password");
-                String user = passwordScn.next().trim();
-                char[] sh=user.toCharArray();
-                for(int i1=0;i1<sh.length;i1++)
-             	 {sh[i1]= sh[i1]+=5;}
-                String string = new String(sh);
-          	  dataPass = string;
+                dataPass = passwordScn.next();
+
                 i++;
             }
             /*Scanner userScn = new Scanner(System.in);
