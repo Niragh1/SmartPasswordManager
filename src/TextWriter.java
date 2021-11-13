@@ -5,14 +5,15 @@ import java.io.IOException;
 import java.util.Scanner;
 //The input class with Encryption
 public class TextWriter {
-    public static void main( String[] args ) {
+    //public static void main( String[] args ) {
         String dataUser="";
         String dataPass="";
         String dataAcc="";
         String split=" ";
         String nl="\n";
-        String result1 =null;
+        String resulttext = null;
         int i=1;
+        void create(){
         System.out.println("-----Welcome to Smart Password Manager-----");
         System.out.println("-----Keep saving password-----");
         try
@@ -54,10 +55,10 @@ public class TextWriter {
                 System.out.println("Done");
                 Scanner re = new Scanner(System.in);
                 System.out.println("\nwish to continue(y/n)");
-                result1 = re.next();
+                resulttext = re.next();
                 System.out.println("----Thank you for using Smart Password Manager-----");
             }
-                while (result1.equals("y"));
+                while (resulttext.equals("y"));
         }
 
         catch(IOException e)
