@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-
+//The input class with Encryption
 public class TextWriter {
     public static void main( String[] args ) {
         String dataUser="";

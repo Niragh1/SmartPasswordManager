@@ -1,7 +1,9 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.sql.Struct;
 import java.util.Scanner;
+//The output with decryption
     public class Split{
 
         public static void main(String args[]) throws FileNotFoundException{
@@ -27,9 +29,18 @@ import java.util.Scanner;
                     words=line.trim().split("\\s+");
                     flag = true;
                     times++;
-                    //System.out.println(times+"Account found!");
                     System.out.println("username is :"+words[1]);
-                    System.out.println("Password is is :"+words[2]);
+                    String oPass = words[2];
+                    char[] sh=oPass.toCharArray();
+                    for(int i1=0;i1<sh.length;i1++)
+                    {sh[i1]= sh[i1]-=5;}
+
+                    String string = new String(sh);
+                    oPass = string;
+
+
+
+                    System.out.println("Password is is :"+oPass);
 
                 }
             }
@@ -39,9 +50,10 @@ import java.util.Scanner;
 
 
             if(flag) {
-                System.out.println("Account found!");
-                System.out.println(word);
+                System.out.println(times+ " "+word+" " +"Account found!");
+                 }
+        else
+            System.out.println("Account Doesn't Exist");
+        }}
 
-                /*System.out.println("username is :"+words[1]);
-                System.out.println("Password is is :"+words[2]); */ }}}
 
