@@ -6,22 +6,22 @@ import java.util.Scanner;
 //The input class with Encryption
 public class TextWriter {
     //public static void main( String[] args ) {
-        String dataUser="";
-        String dataPass="";
-        String dataAcc="";
-        String split=" ";
-        String nl="\n";
-        String resulttext = null;
-        int i=1;
-        void create(){
+    String dataUser="";
+    String dataPass="";
+    String dataAcc="";
+    String split=" ";
+    String nl="\n";
+    String resulttext = null;
+    int i=1;
+    void create(){
         System.out.println("-----Welcome to Smart Password Manager-----");
         System.out.println("-----Keep saving password-----");
         try
         {
             do
             {
-            Scanner userScn = new Scanner(System.in);
-            Scanner passwordScn = new Scanner(System.in);
+                Scanner userScn = new Scanner(System.in);
+                Scanner passwordScn = new Scanner(System.in);
 
                 System.out.println("Account name");
                 dataAcc = passwordScn.next();
@@ -40,10 +40,10 @@ public class TextWriter {
                 if (!f1.exists())
                 {
                     f1.createNewFile();
-                 }
+                }
 
                 FileWriter fileWritter = new FileWriter(f1.getName(), true);
-                 BufferedWriter bw = new BufferedWriter(fileWritter);
+                BufferedWriter bw = new BufferedWriter(fileWritter);
 
                 bw.write(dataAcc);
                 bw.write(split);
@@ -58,7 +58,7 @@ public class TextWriter {
                 resulttext = re.next();
                 System.out.println("----Thank you for using Smart Password Manager-----");
             }
-                while (resulttext.equals("y"));
+            while (resulttext.equals("y"));
         }
 
         catch(IOException e)
