@@ -30,7 +30,7 @@ public class menu_file extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GUI a = new GUI();
+                add_file a = new add_file();
                 // setVisible(false);
                 f.dispose();
                 a.setVisible(true);

@@ -21,7 +21,7 @@ public class search_file extends JFrame {
         f.setResizable(false);
         f.setLayout(null);
 
-        JTextField name = new JTextField(".");
+        JTextField name = new JTextField();
         JTextField foundname = new JTextField();
         foundname.setVisible(false);
         JTextField foundpassword = new JTextField();
@@ -53,10 +53,10 @@ public class search_file extends JFrame {
         f.add(s);
         f.add(b);
 
-        label1.setBounds(150, 40, 150, 30);
-        name.setBounds(150, 70, 150, 30);
-        s.setBounds(100, 140, 150, 30);
-        b.setBounds(200, 140, 150, 30);
+        label1.setBounds(100, 40, 150, 30);
+        name.setBounds(100, 70, 150, 30);
+        s.setBounds(100, 140, 100, 30);
+        b.setBounds(200, 140, 100, 30);
         label2.setBounds(70, 210, 250, 30);
         label3.setBounds(70, 280, 100, 30);
         foundname.setBounds(150, 280, 150, 30);

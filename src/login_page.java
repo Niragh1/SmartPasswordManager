@@ -127,6 +127,7 @@ class Login {
     public static void main(String[] a) {
         login_page frame = new login_page();
         UserNameFile file =new UserNameFile();
+        PasswordFile p = new PasswordFile();
         file.filemaker();
         frame.setTitle("Login Form");
         frame.setVisible(true);

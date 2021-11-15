@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI extends JFrame implements ActionListener {
+public class add_file extends JFrame implements ActionListener {
     private static String[] ans= new String[3];
     private JButton button1;
    private JPanel panel1;
@@ -12,7 +12,7 @@ public class GUI extends JFrame implements ActionListener {
     static String username;
     static String password;
 
-GUI(){
+add_file(){
 
 
 
@@ -53,6 +53,8 @@ GUI(){
             pass.setBounds(50, 150, 250, 30);
 
             JButton b = new JButton("SUBMIT");
+            JButton back = new JButton("BACK");
+            back.setBounds(230, 200, 100, 40);
 
 
 
@@ -63,7 +65,7 @@ GUI(){
             f.setVisible(true);
 
 
-            b.setBounds(130, 200, 100, 40);
+            b.setBounds(30, 200, 100, 40);
             b.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -75,8 +77,20 @@ GUI(){
                     ans[2]=new String(acc.getText());
 
                     txt.runner(ans);
+                    name.setText(null);
+                    pass.setText(null);
+                    acc.setText(null);
+                    JOptionPane.showMessageDialog(null, "Account Added!");
 
 
+                }
+            });
+            back.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    f.dispose();
+                    menu_file menu =new menu_file();
+                    menu.setVisible(true);
                 }
             });
 
@@ -88,6 +102,7 @@ GUI(){
             f.add(pass);
             f.add(b);
             f.add(acc);
+            f.add(back);
 
 
     }
