@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Pass.iml" filepath="$PROJECT_DIR$/Pass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartPasswordManager.iml" filepath="$PROJECT_DIR$/SmartPasswordManager.iml" />
     </modules>
   </component>
 </project>

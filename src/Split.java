@@ -1,82 +1,70 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Struct;
 import java.util.Scanner;
+//The output with decryption
 public class Split{
-    @SuppressWarnings("resource")
-	public static void main(String args[]) throws FileNotFoundException{
 
-        Scanner sc1 = new Scanner(System.in);
-        System.out.println("Enter the account name:");
-        String word = sc1.next();
-        boolean flag = false;
-      //  int count = 0;
-     //   String user= "twittwe";
-     //   String pass ="Hi@123";
-        String[] words = null;
-     /*   String line ="";
+    //public static void main(String args[]) throws FileNotFoundException{
 
+    String result1 = null;
+    void saved() throws FileNotFoundException {
 
-        Scanner sc2 = new Scanner(new FileInputStream("username.txt"));
-        while(sc2.hasNextLine()) {
-            line = sc2.nextLine();
-            System.out.println(line);*/
-            
-            
-            Scanner input = new Scanner(new FileInputStream("username.txt"));
+        try {
+            System.out.println("------Get Password Here-----");
 
-            File file = new File("username.txt");
+            do {
+                Scanner sc1 = new Scanner(System.in);
+                System.out.println("Enter the account name:");
+                String word = sc1.next();
+                boolean flag = false;
+                int times = 0;
+                String[] words = null;
 
-            input = new Scanner(file);
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
-                if(line.indexOf(word)!=-1) {
-            //    System.out.println("index id"+ line.indexOf(word));
-                words=line.trim().split("\\s+");
-                flag = true;
-                break;
-            }
+                Scanner input = new Scanner(new FileInputStream("username.txt"));
+                File file = new File("username.txt");
+                input = new Scanner(file);
+                while (input.hasNextLine()) {
+                    String line = input.nextLine();
+                    if (line.indexOf(word) != -1) {
+                        words = line.trim().split("\\s+");
+                        flag = true;
+                        times++;
+                        System.out.println("username is :" + words[1]);
+                        String oPass = words[2];
+                        char[] sh = oPass.toCharArray();
+                        for (int i1 = 0; i1 < sh.length; i1++) {
+                            sh[i1] = sh[i1] -= 5;
+                        }
+
+                        String string = new String(sh);
+                        oPass = string;
+
+                        System.out.println("Password is is :" + oPass);
+
+                    }
                 }
-          
-			// String[] words=line.trim().split("\\s+");
-            
-            
-           
-  //          if(line.indexOf(word)!=-1) {
-   //             System.out.println("index id"+ line.indexOf(word));
-   //             flag = true;
-   //          count = count+1;
-            
-            //System.out.println("index id"+ line.indexOf(word));
-             
- /*   for(String w:words){
-        System.out.println(w);}*/
-            input.close();
-          
-       // System.out.println("index id"+ line.indexOf(word));
-        if(flag) {
-            System.out.println("Account found!");
-            System.out.println(word);
-  //          String[] words=word.trim().split("\\s+");
-            //System.out.println("Account  is :"+words[0]);
-   //         for(String w:words){
-         //       System.out.println(w);
-           System.out.println("username is :"+words[1]);
-           System.out.println("Password is is :"+words[2]);  }}}
-   //     }
-           // System.out.println("Account not found!!");
-        //Scanner SplitSc = new Scanner(new FileInputStream("username.txt"));
-        //String s1="Twitter nirag hi@123";
-     //   String[] words=word.split("\\s");
-
-        //System.out.println("Account  is :"+words[0]);
-     //   System.out.println("username is :"+words[1]);
-     //   System.out.println("Password is is :"+words[2]);
 
 
-     //   String s1="java string split method by javatpoint";
-     //   String[] words=s1.split("\\s");
-    //    for(String w:words){
-     //       System.out.println(w);
-    //    }
-   // }}
+                input.close();
+
+
+                if (flag) {
+                    System.out.println(times + " " + word + " " + "Account found!");
+                } else
+                    System.out.println("Account Doesn't Exist");
+                Scanner re = new Scanner(System.in);
+                System.out.println("\nDo you want more passwords(y/n)");
+                result1 = re.next();
+            }
+            while (result1.equals("y"));
+
+        }
+        catch(FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
+}

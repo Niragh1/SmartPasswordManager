@@ -3,8 +3,7 @@ import java.io.IOException;  // Import the IOException class to handle errorspub
 
 
 public class UserNameFile {
-   void filemaker(){
-   // public static void main(String[] args) {
+    public static void main(String[] args) {
         try {
             File myObj = new File("username.txt");
             if (myObj.createNewFile()) {
